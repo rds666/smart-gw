@@ -1,0 +1,54 @@
+.pump {
+    position: absolute;
+    left :$pump-left-position;
+    display: flex;
+    width: $pump-width;
+    > div {
+        > div {
+            display: flex;
+            flex-wrap: wrap;
+            width: $pump-width - 3em;
+            > div {
+                font-size: 1em;
+                line-height: 1.5em;
+                &.pump__label {
+                    width: 5em;
+                }
+                &.pump__value {
+                    width: $pump-width - 8em;
+                }
+            }
+            &.pump-rpm {
+                .pump__label {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    > img {
+        width: 3em;
+        height: 3em;
+        @keyframes rotor {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        animation-name: rotor;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+    &.pump-enable {
+        .pump-rpm .pump__label {
+            color: color('blue');
+        }
+    }
+
+    @for $i from 0 through 10 {
+        &#pump-#{$i + 1} {
+            top: $pump-top-position + ($pump-spacing * $i);
+        }
+    }
+}

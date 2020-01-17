@@ -1,0 +1,55 @@
+@import 'config';
+@import 'lock';
+@import 'view';
+@import 'tabs';
+@import 'pump';
+@import 'piping-left';
+//@import 'tabs';
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #fff;
+    color: color('black');
+}
+h1, h2, h3, h4, h4, h6 {
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+// .chart {
+//     width: 40rem;
+//     height: 10rem;
+// }
+
+.close-all-pump {
+    position: absolute;
+    bottom: 2rem;
+    width: 12rem;
+    line-height: 2rem;
+    font-size: 1rem;
+    border: 0.25rem solid color('black');
+    border-radius: 2rem;
+    background: color('white');
+    outline: none;
+}
+
+@for $i from 1 through 10 {
+    .anim-speed-#{$i} {
+        img {
+            animation-duration: #{11 - $i}s;
+        }
+    }
+}

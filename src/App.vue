@@ -1,0 +1,106 @@
+<template>
+  <div id="app">
+    <app-header />
+    <main>
+      <router-view :key="$route.fullPath" />
+    </main>
+    <nav>
+      <app-navigation />
+    </nav>
+  </div>
+</template>
+
+
+<script>
+// import uibuilder from './../node_modules/node-red-contrib-uibuilder/nodes/src/uibuilderfe.js';
+import AppHeader from './components/AppHeader.vue';
+import AppNavigation from './components/AppNavigation.vue';
+import router from './router';
+
+
+export default {
+  name: 'App',
+  components: {
+    'app-header': AppHeader,
+    'app-navigation': AppNavigation,
+  },
+  beforeMount() {
+    this.uibuilderSend('init', true);
+
+    uibuilder.onChange('msg', (msg) => {
+      console.log('msg recieved: ', msg);
+
+      // init
+      if (msg.topic == 'init') {
+        this.$store.dispatch('init', msg.payload);
+        return;
+      }
+
+      // speed
+      if (msg.topic == 'date') {
+        this.$store.dispatch('setDate', msg.payload);
+        return;
+      }
+      if (msg.topic == 'time') {
+        this.$store.dispatch('setTime', msg.payload);
+        return;
+      }
+      if (msg.topic == 'hostname') {
+        this.$store.dispatch('setHostname', msg.payload);
+        return;
+      }
+      if (msg.topic == 'serial') {
+        this.$store.dispatch('setSerial', msg.payload);
+        return;
+      }
+      if (msg.topic == 'uptime') {
+        this.$store.dispatch('setUptime', msg.payload);
+        return;
+      }
+      if (msg.topic == 'eth0_ip') {
+        this.$store.dispatch('setEth0Ip', msg.payload);
+        return;
+      }
+      if (msg.topic == 'eth0_mac') {
+        this.$store.dispatch('setEth0Mac', msg.payload);
+        return;
+      }
+      if (msg.topic == 'eth0_speed') {
+        this.$store.dispatch('setEth0Speed', msg.payload);
+        return;
+      }
+
+      // dockers
+      if (msg.topic == 'comm_gateway') {
+        this.$store.dispatch('setCommGateway', msg.payload);
+        return;
+      }
+      if (msg.topic == 'control_module') {
+        this.$store.dispatch('setControlModule', msg.payload);
+        return;
+      }
+      if (msg.topic == 'config_module') {
+        this.$store.dispatch('setConfigModule', msg.payload);
+        return;
+      }
+      if (msg.topic == 'display_module') {
+        this.$store.dispatch('setDisplayModule', msg.payload);
+        return;
+      }
+      if (msg.topic == 'mosquitto') {
+        this.$store.dispatch('setMosquitto', msg.payload);
+        return;
+      }
+
+      // reload
+      if (msg.topic == 'reload') {
+        this.$router.push('/values');
+        location.reload();
+        return;
+      }
+
+    });
+
+  },
+}
+</script>

@@ -1,0 +1,30 @@
+$center-column-width: 64rem;
+
+.view {
+    height: calc(100vh - #{$tabs-height});
+    display: flex;
+    justify-content: space-between;
+
+    .left-column, 
+    .right-column {
+        width: calc(50% - #{ $center-column-width / 2 });
+    }
+    .center-column {
+        width: $center-column-width;
+        .image-container {
+            font-size: 1rem;
+            position: relative;
+            height: 100%;
+        }
+    }
+
+    .right-column {
+        display: flex;
+        justify-content: flex-end;
+        > img {
+            width: 15rem;
+            height: 16rem;
+        }
+    }
+
+}

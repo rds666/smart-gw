@@ -1,0 +1,31 @@
+.app-navigation {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background-color: #E9E9ED;
+
+  > li {
+    margin: inherit;
+    padding: inherit;
+    width: 20%;
+    > a {
+      display: block;
+      height: inherit;
+      line-height: 4rem;
+      @media screen and (max-width: 1280px) {
+        line-height: 5rem;
+      }
+      color: #000;
+      font-size: 1rem;
+      text-decoration: none;
+      text-align: center;
+
+      &.active {
+        background-color: #2A80C3
+      }
+    }
+
+  }
+  
+}

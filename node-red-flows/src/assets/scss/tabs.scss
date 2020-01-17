@@ -1,0 +1,52 @@
+$tabs-navigation-height: 2.75rem;
+
+
+.vue-tabs.main-tabs {
+    height: $tabs-height;
+    .nav-tabs-navigation {
+        height: $tabs-navigation-height;
+        .nav-tabs {
+            display: flex;
+            > li {
+                width: 25%;
+                clear: left;
+                &.active > a {
+                    margin: 0;
+                    padding: 0;
+                    border: 0;
+                    line-height: $tabs-navigation-height;
+                    background-color: color('blue');
+                }
+            }
+        }
+    }
+    .tab-content {
+        height: $tabs-height - $tabs-navigation-height;
+        background: color('blue');
+    }
+}
+
+
+.vue-tabs.sub-tabs {
+    position: relative;
+    .nav-tabs-navigation {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: color('black');
+        .nav-tabs > li {
+            width: auto;
+        }
+        a:not(:hover) .title {
+            color: color('white');
+        }
+    }
+    .tab-container {
+        display: flex;
+        padding: 0 2rem;
+        color: color('white');
+        > div {
+            width: 12.5rem;
+        }
+    }
+}

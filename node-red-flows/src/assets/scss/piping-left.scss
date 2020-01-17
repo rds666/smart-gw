@@ -1,0 +1,97 @@
+.piping-left {
+    position: absolute;
+    top: 0;
+    left: $pump-width + 2em;
+
+    svg {
+        height: $image-container-height + 3em;
+    }
+    .piping-outline {
+        .piping-background {
+            line {
+                stroke: color('black-3');
+                stroke-width: 8;
+            }
+            circle {
+                stroke: none;
+                fill: color('black-3');
+            }
+        }
+        .piping-foreground {
+            line {
+                stroke: color('white');
+                stroke-width: 3;
+            }
+        }
+    }
+    .piping-active {
+        line {
+            stroke: none;
+            stroke-width: 3;
+            stroke-dasharray: 5;
+        }
+        @keyframes water {
+            from {
+                stroke-dashoffset: 100;
+            }
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+        
+        &.active-1 {
+            #piping-left-1 {
+                stroke: color('blue');
+                animation: water 5s linear infinite;
+            }
+            #piping-left-4 {
+                stroke: color('blue');
+                animation: water 5s linear infinite;
+            }
+            #piping-left-7 {
+                stroke: color('blue');
+                animation: water 5s linear infinite;
+            }
+        }
+
+        &.active-2 {
+            #piping-left-2 {
+                stroke: color('blue');
+                animation: water 5s linear infinite;
+            }
+            &:not(.active-3) {
+                #piping-left-5 {
+                    stroke: color('blue');
+                    animation: water 5s linear infinite;
+                }
+            }
+            &:not(.active-1) {
+                #piping-left-7 {
+                    stroke: color('blue');
+                    animation: water 5s linear infinite;
+                }
+            }
+        }
+
+        &.active-3 {
+            #piping-left-3 {
+                stroke: color('blue');
+                stroke-dasharray: 5;
+                animation: water 5s linear infinite;
+            }
+            #piping-left-6 {
+                stroke: color('blue');
+                stroke-dasharray: 5;
+                animation: water 5s linear infinite;
+            }
+            &:not(.active-1),
+            &:not(.active-2) {
+                #piping-left-7 {
+                    stroke: color('blue');
+                    animation: water 5s linear infinite;
+                }
+            }
+        }
+
+    }
+}

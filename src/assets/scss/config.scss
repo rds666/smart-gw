@@ -1,0 +1,28 @@
+$colors-config: (
+    'white': #fff,
+    'lightgray': #ccc,
+    'black': rgba(#000, 0.7),
+    'black-2': mix(#555, #fff, 0.85),
+    'black-3': #555,
+    'blue': #2873b6,
+    'alert': #d20,
+    'grey': #e2e2e2,
+    'ka-lightgrey': #f6f6f6,
+    'ka-grey': #dedede,
+    'ka-dark-grey': #636363,
+    'ka-blue': #5b9ddf,
+    'ka-turquoise': #97D5D2,
+
+);
+@function color($c){
+    @return map-get($colors-config, $c);
+}
+
+$image-container-height: 30em;
+
+$pump-width: 15em;
+$pump-top-position: 2em;
+$pump-spacing: 4.5em;
+$pump-left-position: 2em;
+
+$tabs-height: 16rem;

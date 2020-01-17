@@ -1,0 +1,102 @@
+.view-control {
+  
+  > section {
+    padding: 0 0 0 1.5rem;
+    > div {
+      display: flex;
+      align-items: center;
+
+      > div:not(.inactive-button) {
+        width: 6.25rem;
+        > span {
+          font-size: 0.75rem;
+        }
+        > div {
+          font-size: 2rem;
+          > span {
+            font-size: 0.75rem;
+          }
+        }
+      }
+
+      > button, 
+      > .inactive-button {
+        display: block;
+        box-sizing: content-box;
+        width: 7.5rem;
+        height: 5rem;
+        text-align: center;
+        border: 0;
+        background: none;
+        > div {
+          margin: 0 1rem 0 0;
+          border-radius: 1rem;
+        }
+        &.stop > div {
+          background-color: #f22;
+        }
+        &.start > div {
+          background-color: #099A12;
+        }
+      }
+      > button > div {
+        color: #fff;
+        background-color: #2A80C3;
+      }
+      > .inactive-button > div {
+        color: #000;
+        background-color: #ccc;
+      }
+
+      &.setpoint {
+        > div {
+          padding-top: 1.5rem;
+        }
+        > button, 
+        > .inactive-button {
+          padding: 2rem 0 0 0;
+          font-size: 3rem;
+
+          &:last-child {
+            width: 8rem;
+            > div {
+              margin-right: 1.5rem;
+            }
+          }
+        }
+
+        .inactive-button > div {
+          margin-top: 0.75rem;
+        }
+
+      }
+      &.running {
+        > div {
+          padding-bottom: 2.25rem;
+          font-size: 1rem;
+        }
+        > button, 
+        > .inactive-button {
+          padding: 0 0 2rem 0;
+          font-size: 1.5rem;
+          line-height: 3rem;
+
+          &:last-child {
+            width: 8rem;
+            > div {
+              margin-right: 1.5rem;
+            }
+          }
+        }
+
+        .inactive-button > div {
+          margin-top: 1rem;
+        }
+
+      }
+
+    }
+
+  }
+}
+
