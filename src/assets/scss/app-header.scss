@@ -1,6 +1,13 @@
 .app-header {
   display: flex;
   background-color: #503291;
+
+  img {
+    vertical-align: top;
+    margin: 0 0 0 1.5rem;
+    width: 3rem;
+    height: 3rem;
+  }
 /*
   > figure {
     margin: 0;

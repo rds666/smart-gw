@@ -28,9 +28,9 @@ export default new Vuex.Store({
     hostname: '',
     serial: '',
     uptime: '',
-    eth0ip: '',
-    eth0mac: '',
-    eth0speed: 0,
+    eth0Ip: '',
+    eth0Mac: '',
+    eth0Speed: 0,
 
     //  dockers
     commGateway: false,
@@ -123,13 +123,13 @@ export default new Vuex.Store({
       state.uptime = payload;
     },
     SET_ETH0_IP(state, payload) {
-      state.eth0ip = payload;
+      state.eth0Ip = payload;
     },
     SET_ETH0_MAC(state, payload) {
-      state.eth0mac = payload;
+      state.eth0Mac = payload;
     },
     SET_ETH0_SPEED(state, payload) {
-      state.eth0_speed = payload;
+      state.eth0Speed = payload;
     },
 
     // dockers

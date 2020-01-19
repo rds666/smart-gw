@@ -1,5 +1,11 @@
 .view-diagnostics {
   > section {
-    
+    hr {
+      display: block;
+      margin: 1rem 0 0.25rem 0;
+      border: 0;
+      height: 0.125rem;
+      background-color: #93939D;
+    }
   }
 }

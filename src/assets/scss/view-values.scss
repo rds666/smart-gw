@@ -1,5 +1,11 @@
 .view-values {
   > section {
+    > div {
+      display: flex;
+      > ul {
+        width: 50%;
+      }
+    }
 
     svg {
       margin-top: 0.25rem;

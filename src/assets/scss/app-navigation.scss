@@ -11,18 +11,23 @@
     width: 25%;
     > a {
       display: block;
-      height: inherit;
-      line-height: 4rem;
+      height: 3rem;
+      line-height: 3rem;
       @media screen and (max-width: 1280px) {
-        line-height: 5rem;
+        height: 4rem;
+        line-height: 4rem;
       }
       color: #000;
       font-size: 1rem;
       text-decoration: none;
       text-align: center;
+      border-top: 0.5rem solid #93939D;
+      border-bottom: 0.5rem solid #93939D;
 
       &.router-link-active {
-        background-color: #2A80C3
+        font-weight: bold;
+        color: #503291;
+        border-bottom: 0.5rem solid #503291;
       }
     }
 
