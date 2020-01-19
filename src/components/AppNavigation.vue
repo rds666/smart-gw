@@ -4,7 +4,7 @@
       <router-link to="/" exact>Values</router-link>
     </li>
     <li>
-      <router-link to="/diagram">Diagnostics</router-link>
+      <router-link to="/diagnostics">Diagnostics</router-link>
     </li>
     <li>
       <router-link to="/system">System</router-link>

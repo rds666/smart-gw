@@ -1,0 +1,23 @@
+.view-values {
+  > section {
+
+    svg {
+      margin-top: 0.25rem;
+      .grid {
+        text {
+            font-size: 0.75rem;
+            fill: #444;
+        }
+        line {
+            stroke: #777;
+            stroke-width: 1px;
+        }
+      }
+      > g > line {
+        stroke: #503291;
+        stroke-width: 0.125rem;
+      }
+    } 
+
+  }
+}

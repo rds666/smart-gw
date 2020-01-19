@@ -36,7 +36,47 @@ export default {
         return;
       }
 
-      // speed
+      // values
+      if (msg.topic == 'batch_name') {
+        this.$store.dispatch('setBatchName', msg.payload);
+        return;
+      }
+      if (msg.topic == 'batch_state') {
+        this.$store.dispatch('setBatchState', msg.payload);
+        return;
+      }
+      if (msg.topic == 'glucose') {
+        this.$store.dispatch('setGlucose', msg.payload);
+        return;
+      }
+      if (msg.topic == 'acq_time') {
+        this.$store.dispatch('setAcqTime', msg.payload);
+        return;
+      }
+      if (msg.topic == 'acq_date') {
+        this.$store.dispatch('setAcqDate', msg.payload);
+        return;
+      }
+
+      // diagnostics
+      if (msg.topic == 'reachable') {
+        this.$store.dispatch('setReachable', msg.payload);
+        return;
+      }
+      if (msg.topic == 'opcua_port_open') {
+        this.$store.dispatch('setOpcuaPortOpen', msg.payload);
+        return;
+      }
+      if (msg.topic == 'opcua_port_running') {
+        this.$store.dispatch('setOpcuaPortRunning', msg.payload);
+        return;
+      }
+      if (msg.topic == 'binded_with') {
+        this.$store.dispatch('setBindedWith', msg.payload);
+        return;
+      }
+
+      // system
       if (msg.topic == 'date') {
         this.$store.dispatch('setDate', msg.payload);
         return;

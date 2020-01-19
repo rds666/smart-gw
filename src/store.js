@@ -9,6 +9,19 @@ export default new Vuex.Store({
   state: {
     init: true,
 
+    // values 
+    batchName: '',
+    batchState: '',
+    glucose: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    acqTime: '',
+    acqDate: '',
+
+    // diagnostics
+    reachable: false,
+    opcuaPortOpen: false,
+    opcuaPortRunning: false,
+    bindedWith: 'none',
+
     // system
     date: '',
     time: '',
@@ -60,6 +73,38 @@ export default new Vuex.Store({
       state.current_sensor_tab = payload;
     },
 
+    // values
+    SET_BATCH_NAME(state, payload) {
+      state.batchName = payload;
+    },
+    SET_BATCH_STATE(state, payload) {
+      state.batchState = payload;
+    },
+    SET_GLUCOSE(state, payload) {
+      let glucose = Math.floor(payload);
+      state.glucose.shift();
+      state.glucose.push(glucose);
+    },
+    SET_ACQ_TIME(state, payload) {
+      state.acqTime = payload;
+    },
+    SET_ACQ_DATE(state, payload) {
+      state.acqDate = payload;
+    },
+
+    // diagnostics
+    SET_REACHABLE(state, payload) {
+      state.reachable = payload;
+    },
+    SET_OPCUA_PORT_OPEN(state, payload) {
+      state.opcuaPortOpen = payload;
+    },
+    SET_OPCUA_PORT_RUNNING(state, payload) {
+      state.opcuaPortRunning = payload;
+    },
+    SET_BINDED_WITH(state, payload) {
+      state.bindedWith = payload;
+    },
 
     // system
     SET_DATE(state, payload) {
@@ -108,6 +153,19 @@ export default new Vuex.Store({
   actions: {
     // init
     init: ({ commit }, payload) => commit('SET_INIT', payload),
+
+    // valuse
+    setBatchName: ({ commit }, payload) => commit('SET_BATCH_NAME', payload),
+    setBatchState: ({ commit }, payload) => commit('SET_BATCH_STATE', payload),
+    setGlucose: ({ commit }, payload) => commit('SET_GLUCOSE', payload),
+    setAcqTime: ({ commit }, payload) => commit('SET_ACQ_TIME', payload),
+    setAcqDate: ({ commit }, payload) => commit('SET_ACQ_DATE', payload),
+
+    // diagnostics
+    setReachable: ({ commit }, payload) => commit('SET_REACHABLE', payload),
+    setOpcuaPortOpen: ({ commit }, payload) => commit('SET_OPCUA_PORT_OPEN', payload),
+    setOpcuaPortRunning: ({ commit }, payload) => commit('SET_OPCUA_PORT_RUNNING', payload),
+    setBindedWith: ({ commit }, payload) => commit('SET_BINDED_WITH', payload),
 
     // system
     setDate: ({ commit }, payload) => commit('SET_DATE', payload),

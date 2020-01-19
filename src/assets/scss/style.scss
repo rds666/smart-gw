@@ -2,6 +2,8 @@
 @import 'app-header';
 @import 'app-navigation';
 
+@import 'view-values';
+@import 'view-diagnostics';
 @import 'view-dockers';
 @import 'view-system';
 
@@ -29,6 +31,9 @@ svg text {
 p {
   margin: 0;
 }
+h1, h2 {
+  margin: 0;
+}
 
 #app {
   width: 100%;
@@ -50,6 +55,10 @@ p {
     > .view {
       width: 100%;
       height: inherit;
+      > section {
+        padding: 1.5rem 2rem;
+      }
+
       ul {
         list-style: none;
         padding: 0;
