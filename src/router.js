@@ -18,49 +18,31 @@ export default new Router({
     {
       path: '/',
       name: 'Values',
-      props: {
-        tab: 1
-      },
       component: Values
     },
     {
       path: '/values',
       name: 'Values',
-      props: {
-        tab: 1
-      },
       component: Values
     },
     {
       path: '/diagnostics',
       name: 'Diagnostics',
-      props: {
-        tab: 2
-      },
       component: Diagnostics
     },
     {
       path: '/system',
       name: 'System',
-      props: {
-        tab: 3
-      },
       component: System
     },
     {
       path: '/dockers',
       name: 'Dockers',
-      props: {
-        tab: 4
-      },
       component: Dockers
     },
     {
       path: '/configuration',
       name: 'Configuration',
-      props: {
-        tab: 5
-      },
       component: Configuration
     },
   ],

@@ -1,7 +1,7 @@
 <template>
-  <ul class="app-navigation">
+  <ul :class="`app-navigation active-${ tab }`">
     <li>
-      <router-link to="/values">Values</router-link>
+      <router-link to="/" exact>Values</router-link>
     </li>
     <li>
       <router-link to="/diagram">Diagnostics</router-link>
@@ -11,9 +11,6 @@
     </li>
     <li>
       <router-link to="/dockers">Docekrs</router-link>
-    </li>
-    <li>
-      <router-link to="/configuration">Helper</router-link>
     </li>
   </ul>
 </template>
@@ -25,6 +22,7 @@ import { mapState } from 'vuex';
 
 export default {
   name: 'AppNavigation',
+  props: ['tab'],
   data() {
     return {
       tabControl: true,
