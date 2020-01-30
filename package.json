@@ -14,7 +14,7 @@
   "dependencies": {
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "file-loader": "^3.0.1",
-    "node-red": "^0.19.6",
+    "node-red": "^0.20.8",
     "node-red-contrib-ui-led": "^0.2.1",
     "node-red-contrib-uibuilder": "^2.0.6",
     "node-red-dashboard": "^2.14.0",
