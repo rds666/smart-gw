@@ -6,7 +6,7 @@ import Diagnostics from './views/Diagnostics.vue';
 import System from './views/System.vue';
 import Dockers from './views/Dockers.vue';
 
-import Configuration from './views/Configuration.vue';
+import Helpers from './views/Helpers.vue';
 
 
 Vue.use(Router);
@@ -41,9 +41,9 @@ export default new Router({
       component: Dockers
     },
     {
-      path: '/configuration',
-      name: 'Configuration',
-      component: Configuration
+      path: '/helpers',
+      name: 'Helpers',
+      component: Helpers
     },
   ],
   scrollBehavior() {

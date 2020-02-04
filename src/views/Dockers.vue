@@ -5,19 +5,24 @@
 
       <ul>
         <li>
-          <span>Comm gateway:</span> {{ displayInfo(commGateway) }}
+          <span>Comm gateway:</span> 
+          <div>{{ displayInfo(commGateway) }}</div>
         </li>
         <li>
-          <span>Control module:</span> {{ displayInfo(controlModule) }}
+          <span>Control module:</span> 
+          <div>{{ displayInfo(controlModule) }}</div>
         </li>
         <li>
-          <span>Configm module:</span> {{ displayInfo(configModule) }}
+          <span>Config module:</span> 
+          <div>{{ displayInfo(configModule) }}</div>
         </li>
         <li>
-          <span>Display module:</span> {{ displayInfo(displayModule) }}
+          <span>Display module:</span> 
+          <div>{{ displayInfo(displayModule) }}</div>
         </li>
         <li>
-          <span>Mosquitto:</span> {{ displayInfo(mosquitto) }}
+          <span>Mosquitto:</span> 
+          <div>{{ displayInfo(mosquitto) }}</div>
         </li>
       </ul>
     </section>

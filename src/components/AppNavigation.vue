@@ -10,8 +10,11 @@
       <router-link to="/system">System</router-link>
     </li>
     <li>
-      <router-link to="/dockers">Docekrs</router-link>
+      <router-link to="/dockers">Dockers</router-link>
     </li>
+    <!-- <li>
+      <router-link to="/helpers">Helpers</router-link>
+    </li> -->
   </ul>
 </template>
 

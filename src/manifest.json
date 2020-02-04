@@ -1,6 +1,6 @@
 {
-    "name": "Mobius Bioreactor 3L",
-    "short_name": "Mobius Bioreactor",
+    "name": "Smart Gateway",
+    "short_name": "Smart Gateway",
     "icons": [
       {
         "src": "./app-icon-192.png",
@@ -14,9 +14,9 @@
       }
     ],
     "start_url": "./index.html",
-    "display": "standalone",
+    "display": "fullscreen",
     "orientation": "landscape",
     "background_color": "#ffffff",
-    "theme_color": "#2873b6"
+    "theme_color": "#503291"
   } 
   

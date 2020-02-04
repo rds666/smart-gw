@@ -3,7 +3,10 @@
   display: flex;
   margin: 0;
   padding: 0;
-  background-color: #93939D;
+  background-color: #ddd;
+  @media screen and (max-width: 1280px) {
+    background-color: #bbb;
+  }
 
   > li {
     margin: inherit;
@@ -21,8 +24,12 @@
       font-size: 1rem;
       text-decoration: none;
       text-align: center;
-      border-top: 0.5rem solid #93939D;
-      border-bottom: 0.5rem solid #93939D;
+      border-top: 0.5rem solid #ddd;
+      border-bottom: 0.5rem solid #ddd;
+      @media screen and (max-width: 1280px) {
+        border-top: 0.5rem solid #bbb;
+        border-bottom: 0.5rem solid #bbb;
+      }
 
       &.router-link-active {
         font-weight: bold;

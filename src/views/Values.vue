@@ -6,53 +6,69 @@
       <div>
         <ul>
           <li>
-            <span>Batch Name:</span> {{ batchName }}
+            <span>Batch Name:</span> 
+            <div>{{ batchName }}</div>
           </li>
           <li>
-            <span>Batch State:</span> {{ batchState }}
+            <span>Batch State:</span> 
+            <div>{{ batchState }}</div>
           </li>
           <li>
-            <span>Glucose:</span> {{ glucose[glucose.length - 1] }} g/L
+            <span>Glucose:</span> 
+            <div>{{ glucose[glucose.length - 1] }} g/L</div>
           </li>
           <li>
-            <span>Acquisition Time:</span> {{ acqTime }}
+            <span>Acq. Time:</span> 
+            <div>{{ acqTime }}</div>
           </li>
           <li>
-            <span>Acquisition Date:</span> {{ acqDate }}
+            <span>Acq. Date:</span> 
+            <div>{{ acqDate }}</div>
           </li>
         </ul>
         
-        <svg width="300" height="120">
+        <svg width="390" :height="`${ chartHeight + 20 }`">
 
           <g class="grid">
-            <line x1="60" y1="10" x2="60" y2="110" />
+            <line x1="60" y1="10" x2="60" y2="210" />
 
-            <text x="27" y="15">30</text>
-            <line x1="55" y1="10" x2="350" y2="10" />
-  <!--
-            <text x="27" y="40">25&deg;</text>
-  -->
-            <line x1="55" y1="35" x2="350" y2="35" />
-            <text x="27" y="65">25</text>
-            <line x1="55" y1="60" x2="350" y2="60" />
-  <!--
-            <text x="27" y="90">15&deg;</text>
-  -->
-            <line x1="55" y1="85" x2="350" y2="85" />
-            <text x="27" y="115">20</text>
-            <line x1="55" y1="110" x2="350" y2="110" />
+            <text x="27" y="15">{{ chartTo }}</text>
+            <text x="27" :y="`${((chartHeight / 4) * 1) + 15}`">15</text>
+            <text x="27" :y="`${((chartHeight / 4) * 2) + 15}`">10</text>
+            <text x="27" :y="`${((chartHeight / 4) * 3) + 15}`">5</text>
+            <text x="27" :y="`${chartHeight + 15}`">{{ chartFrom }}</text>
+
+            <line x1="55" y1="10" x2="380" y2="10" />
+            <line x1="55" :y1="`${ (chartHeight / 4) + 10 }`" x2="380" :y2="`${ (chartHeight / 4) + 10 }`" />
+            <line x1="55" :y1="`${ (chartHeight / 2) + 10 }`" x2="380" :y2="`${ (chartHeight / 2) + 10 }`" />
+            <line x1="55" :y1="`${ (chartHeight / 2) + (chartHeight / 4) + 10 }`" x2="380" :y2="`${ (chartHeight / 2) + (chartHeight / 4) + 10 }`" />
+            <line x1="55" :y1="`${ chartHeight + 10 }`" x2="380" :y2="`${ chartHeight + 10 }`" />
           </g>
 
-          <g v-for="(point, pointId) in glucose" :key="pointId">
-            <line v-if="pointId > 0" 
+          <g class="chart">
+            <g v-for="(point, pointId) in glucose" :key="pointId">
+              <line v-if="pointId > 0" 
+                :x1="`${ 60 + ((pointId - 1) * 11) }`"
+                :x2="`${ 60 + (pointId * 11) }`"
+
+
+                
+
+                :y1="`${ chartHeight - (glucose[pointId - 1] - chartFrom) * (chartHeight / chartRange) + 10 }`"
+                :y2="`${ chartHeight - (point - chartFrom) * (chartHeight / chartRange) + 10 }`"
+              />
+            </g>
+          </g>
+
+        </svg>
+      </div>
+
+      <!-- 
               :x1="`${ 60 + ((pointId - 1) * 7.5) }`"
               :y1="`${ 310 - (glucose[pointId - 1] * 10) }`" 
               :x2="`${ 60 + (pointId * 7.5) }`"
               :y2="`${ 310 - (point * 10) }`"
-            />
-          </g>
-        </svg>
-      </div>
+       -->
 
     </section>
   </div>
@@ -64,7 +80,19 @@ import { mapState } from 'vuex';
 
 
 export default {
+  data() {
+    return {
+      chartFrom: 0,
+      chartTo: 20,
+      chartRange: Number,
+      chartHeight: 200,
+    }
+  },
   name: 'Values',
   computed: mapState(['batchName', 'batchState', 'glucose', 'acqTime', 'acqDate']),
+  mounted() {
+    this.chartRange = this.chartTo - this.chartFrom;
+    console.log('range: ', this.chartRange);
+  }
 }
 </script>

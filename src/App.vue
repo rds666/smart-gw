@@ -1,12 +1,14 @@
 <template>
   <div id="app">
-    <app-header />
-    <main>
-      <router-view :key="$route.fullPath" />
-    </main>
-    <nav>
-      <app-navigation />
-    </nav>
+    <div>
+      <app-header />
+      <main ref="main">
+        <router-view :key="$route.fullPath" />
+      </main>
+      <nav>
+        <app-navigation />
+      </nav>
+    </div>
   </div>
 </template>
 
@@ -134,13 +136,35 @@ export default {
 
       // reload
       if (msg.topic == 'reload') {
-        this.$router.push('/values');
+        this.$router.push('/');
         location.reload();
+        return;
+      }
+      if (msg.topic == 'reload2') {
+        this.$forceUpdate();
         return;
       }
 
     });
 
   },
+  methods: {
+    checkRotation() {
+      if (window.innerHeight < 641) {
+        setTimeout( () => {
+          let headerHeight = document.querySelector('.app-header').offsetHeight;
+          let navHeight = document.querySelector('.app-navigation').offsetHeight;
+          let mainHeight = window.innerHeight - headerHeight - navHeight;
+          this.$refs.main.style.height = mainHeight + 'px';
+        }, 50);
+      }
+    }
+  },
+  mounted() {
+    this.checkRotation();
+    window.addEventListener('resize', () => {
+      this.checkRotation();
+    });
+  }
 }
 </script>

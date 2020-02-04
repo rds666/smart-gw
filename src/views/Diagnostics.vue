@@ -5,19 +5,20 @@
       <h2>Raman Connectivity</h2>
       <ul>
         <li>
-          <span>Reachable:</span> {{ reachable }}
+          <span>Reachable:</span> 
+          <div>{{ reachable }}</div>
         </li>
         <li>
-          <span>OPCUA Port Open:</span> {{ opcuaPortOpen }}
+          <span>OPCUA Port Open:</span> 
+          <div>{{ opcuaPortOpen }}</div>
         </li>
         <li>
-          <span>OPCUA Port Running:</span> {{ opcuaPortRunning }}
+          <span>OPCUA Port Running:</span> 
+          <div>{{ opcuaPortRunning }}</div>
         </li>
-      </ul>
-      <hr>
-      <ul>
         <li>
-          <span>Binded with:</span> {{ bindedWith }}
+          <span>Binded with:</span> 
+          <div>{{ bindedWith }}</div>
         </li>
       </ul>
     </section>

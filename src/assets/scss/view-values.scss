@@ -2,13 +2,29 @@
   > section {
     > div {
       display: flex;
+      position: relative;
       > ul {
-        width: 50%;
+        width: 35%;
+        @media screen and (orientation: landscape) {
+          span {
+            width: 50% !important;
+          }
+          div {
+            width: 50% !important;
+          }
+        }
       }
     }
 
     svg {
       margin-top: 0.25rem;
+      @media screen and (max-height: 479px) {
+        position: absolute;
+        top: -2.125rem;
+        right: 1rem;
+        width: 300px;
+        overflow: hidden;
+      }
       .grid {
         text {
             font-size: 0.75rem;
@@ -19,7 +35,12 @@
             stroke-width: 1px;
         }
       }
-      > g > line {
+      .chart {
+        @media screen and (max-width: 480px) {
+          transform: scaleX(0.75);
+        }
+      }
+      > g > g > line {
         stroke: #503291;
         stroke-width: 0.125rem;
       }

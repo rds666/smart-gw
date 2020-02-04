@@ -11,23 +11,30 @@
           <span>Time:</span> {{ time }}
         </li>
         <li>
-          <span>Hostname:</span> {{ hostname }}
+          <span>Hostname:</span> 
+          <div>{{ hostname }}</div>
         </li>
         <li>
-          <span>Serial:</span> {{ serial }}
+          <span>Serial:</span> 
+          <div>{{ serial }}</div>
         </li>
         <li>
-          <span>Uptime:</span> {{ uptime }}
+          <span>Uptime:</span> 
+          <div>{{ uptime }}</div>
         </li>
         <li>
-          <span>ETH0 IP:</span> {{ eth0Ip }}
+          <span>ETH0 IP:</span> 
+          <div>{{ eth0Ip }}</div>
         </li>
         <li>
-          <span>ETH0 MAC:</span> {{ eth0Mac }}
+          <span>ETH0 MAC:</span> 
+          <div>{{ eth0Mac }}</div>
         </li>
         <li>
-          <span>ETH0 Speed:</span> {{ eth0Speed }}
+          <span>ETH0 Speed:</span> 
+          <div>{{ eth0Speed }}</div>
         </li>
+        <li>&nbsp;</li>
         <li>&nbsp;</li>
       </ul>
     </section>
