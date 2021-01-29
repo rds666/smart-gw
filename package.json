@@ -17,7 +17,7 @@
     "node-red": "^0.19.6",
     "node-red-contrib-ui-led": "^0.2.1",
     "node-red-contrib-uibuilder": "^2.0.6",
-    "node-red-dashboard": "^2.14.0",
+    "node-red-dashboard": "^2.26.2",
     "npm": "^6.8.0",
     "url-loader": "^1.1.2",
     "vue": "^2.6.6",
